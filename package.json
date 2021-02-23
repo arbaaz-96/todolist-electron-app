@@ -1,0 +1,64 @@
+{
+  "description": "My first Todo React Electron App",
+  "author": "Arbaaz Shaikh",
+  "build": {
+    "appId": "<com.todo-electron-react-app>"
+  },
+  "main": "public/main.js",
+  "name": "todolist",
+  "homepage": "./",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.0",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^1.2.0",
+    "jest": "^26.6.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "wait-on": "^5.2.1",
+    "web-vitals": "^0.2.4",
+    "yarn": "^1.22.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "test": "concurrently \"SET BROWSER=none && npm start\" \"wait-on http://localhost:3000 && jest --detectOpenHandles --forceExit\"",
+    "eject": "react-scripts eject",
+    "buildtest":"jest",
+    "estart":"electron .",
+    "build": "electron-packager . TodoListApp",
+    "electron-react-start": "concurrently \"SET BROWSER=none && npm start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-forge": "^5.2.4",
+    "electron-packager": "^15.2.0",
+    "spectron": "^13.0.0"
+  }
+}
